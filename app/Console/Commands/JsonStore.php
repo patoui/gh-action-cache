@@ -33,7 +33,7 @@ class JsonStore extends Command
             $this->line(sprintf('Creating file named: %s', $filePath));
             Storage::put(
                 $filePath,
-                json_encode(['date' => $date], JSON_PRETTY_PRINT)
+                json_encode(['date' => $date, 'time' => time(), 'rand_int' => mt_rand(0, 999)], JSON_PRETTY_PRINT)
             );
             $this->line(sprintf('Successfully created a file named: %s', $filePath));
         }
