@@ -4,8 +4,8 @@ on:
   workflow_dispatch:
 
 jobs:
-  celebrations:
-    name: command
+  primary:
+    name: previous
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
