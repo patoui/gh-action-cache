@@ -29,26 +29,11 @@ jobs:
           key: ${{ runner.os }}-json-previous
           path: storage/app/foo/previous.json
 
-      - uses: actions/cache/restore@v3
-        id: cache
-        with:
-          key: ${{ runner.os }}-json-current
-          path: storage/app/foo/current.json
-
       - name: Run artisan command
         run: php artisan json:store previous
-
-      - name: Run artisan command
-        run: php artisan json:store current
 
       - name: Cache dependencies
         uses: actions/cache@v3
         with:
           key: ${{ runner.os }}-json-previous
           path: storage/app/foo/previous.json
-
-      - name: Cache dependencies
-        uses: actions/cache@v3
-        with:
-          key: ${{ runner.os }}-json-current
-          path: storage/app/foo/current.json
