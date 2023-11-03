@@ -26,7 +26,7 @@ jobs:
       - uses: actions/cache/restore@v3
         id: cache
         with:
-          key: ${{ runner.os }}-json-dir-{{ hashFiles('storage/app/foo/**') }}
+          key: ${{ runner.os }}-json-dir-${{ hashFiles('storage/app/foo/**') }}
           path: storage/app/foo
           restore-keys: |
             ${{ runner.os }}-json-dir-
@@ -37,5 +37,5 @@ jobs:
       - name: Cache dependencies
         uses: actions/cache@v3
         with:
-          key: ${{ runner.os }}-json-dir-{{ hashFiles('storage/app/foo/**') }}
+          key: ${{ runner.os }}-json-dir-${{ hashFiles('storage/app/foo/**') }}
           path: storage/app/foo
