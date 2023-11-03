@@ -12,7 +12,7 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Setup PHP
-      - uses: shivammathur/setup-php@v2
+        uses: shivammathur/setup-php@v2
 
       - name: Run artisan command
         run: php artisan json:store
