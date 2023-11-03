@@ -23,13 +23,17 @@ jobs:
       - name: Generate key
         run: php artisan key:generate
 
+      - uses: actions/cache/restore@v3
+        id: cache
+        with:
+          key: ${{ runner.os }}-json-cache
+          path: storage/app/foo
+
       - name: Run artisan command
         run: php artisan json:store
 
       - name: Cache dependencies
         uses: actions/cache@v3
         with:
-          key: ${{ runner.os }}-json-${{ hashFiles('**/storage/app/foo') }}
+          key: ${{ runner.os }}-json-cache
           path: storage/app/foo
-          restore-keys:
-            ${{ runner.os }}-json-
