@@ -28,7 +28,7 @@ jobs:
         with:
           key: ${{ runner.os }}-json-dir-{{ hashFiles('storage/app/foo') }}
           path: storage/app/foo
-          restore-key: |
+          restore-keys: |
             ${{ runner.os }}-json-dir-
 
       - name: Run artisan command
