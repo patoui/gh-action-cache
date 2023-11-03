@@ -26,8 +26,8 @@ jobs:
       - uses: actions/cache/restore@v3
         id: cache
         with:
-          key: ${{ runner.os }}-json-previous
-          path: storage/app/foo/previous.json
+          key: ${{ runner.os }}-json-dir
+          path: storage/app/foo
 
       - name: Run artisan command
         run: php artisan json:store previous
@@ -35,5 +35,5 @@ jobs:
       - name: Cache dependencies
         uses: actions/cache@v3
         with:
-          key: ${{ runner.os }}-json-previous
-          path: storage/app/foo/previous.json
+          key: ${{ runner.os }}-json-dir
+          path: storage/app/foo
