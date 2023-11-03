@@ -30,7 +30,7 @@ jobs:
           path: storage/app/foo
 
       - name: Run artisan command
-        run: php artisan json:store previous
+        run: php artisan json:store -1week
 
       - name: Cache dependencies
         uses: actions/cache@v3
