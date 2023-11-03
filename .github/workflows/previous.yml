@@ -1,4 +1,4 @@
-name: command
+name: previous
 
 on:
   workflow_dispatch:
