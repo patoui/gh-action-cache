@@ -1,0 +1,23 @@
+name: command
+
+on:
+  workflow_dispatch:
+
+jobs:
+  celebrations:
+    name: command
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Setup PHP
+        uses: getmaple/action-setup-php@v2
+
+      - name: Run artisan command
+        run: php artisan json:store
+
+      - name: Cache dependencies
+        uses: actions/cache@v3
+        with:
+          path: storage/app/foo
