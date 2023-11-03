@@ -7,13 +7,13 @@ use Illuminate\Support\Facades\Storage;
 
 class JsonStore extends Command
 {
-    protected $signature = 'json:store';
+    protected $signature = 'json:store {name}';
 
     protected $description = 'Generates a JSON file to test GitHub action store';
 
     public function handle(): int
     {
-        $filePath = 'foo/test.json';
+        $filePath = sprintf('foo/%s.json', $this->argument('name'));
 
         if (Storage::exists($filePath)) {
             $this->line('FILE ALREADY EXIST');
