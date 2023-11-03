@@ -26,6 +26,6 @@ class JsonStore extends Command
             $this->line('Successfully created a new file');
         }
 
-        return 1;
+        return 0;
     }
 }
